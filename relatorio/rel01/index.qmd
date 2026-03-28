@@ -1,6 +1,6 @@
 ---
 # Só mude aqui!!!!
-author: "Maria Eduarda Motta e Wadmilson e Cruz"
+author: "Maria Eduarda Motta"
 title: "Relatório sobre o experimento da Catapulta"
 bibliography: referencias.bib
 # A partir daqui nao faca alteracoes!!!!!
@@ -39,7 +39,7 @@ Analisaremos como essas variáveis podem ou não influenciar a distância percor
 
 ### Objetivos específicos
 
-Iremos coletar os dados através da medição da distâcia que a bola percoreu,organizaremos esses dados para a tabulação, organizaremos e analisaremos esses dados na tabulação usando alinguagem R, e após tudo isso discutiremos suas implicações (intepretaremos os resultados obtidos).
+Iremos coletar os dados através da medição da distâcia que a bola percoreu,organizaremos esses dados para a tabulação, organizaremos e analisaremos esses dados na tabulação usando alinguagem R, e após tudo isso discutiremos suas implicações.
 
 ---
 
@@ -93,6 +93,17 @@ $$
 
 ::: {.callout-note}
 :::
+
+```{r,eval = TRUE}
+library(leem)
+
+dados <- c()
+
+dados_organizados <- sort(dados)
+
+print(dados_organizados)
+
+```
 
 - Materiais utilizados: Uma catapulta (já com as variáveis identifacadas e com o elástico) cedida pelo professor que ministra as aulas do curso assim como duas presilhas, uma trena, uma bolinha, giz branco de lousa, uma carteira da faculdade e uma régua;
 
