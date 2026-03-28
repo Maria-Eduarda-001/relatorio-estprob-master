@@ -1,0 +1,174 @@
+---
+# Só mude aqui!!!!
+author: "Maria Eduarda Motta e Wadmilson e Cruz"
+title: "Relatório sobre o experimento da Catapulta"
+bibliography: referencias.bib
+# A partir daqui nao faca alteracoes!!!!!
+link-citations: true
+csl: associacao-brasileira-de-normas-tecnicas-ipea.csl
+subtitle: "<a href='https://bendeivide.github.io/courses/epaec/' target='_blank'>Estatística e Probabilidade</a> </br> <a href='https://bendeivide.github.io' target='_blank'>Prof. Ben Dêivide (DEFIM/CAP/UFSJ)</a>"
+include-before-body: header.html
+date: now
+date-format: "DD/MM/YYYY, HH:mm"
+lang: pt-BR
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme: bootstrap
+    #css: styles.css
+    code-fold: true
+    code-tools: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+
+## 📌 Introdução
+
+O experimento consistiu na observação dos resultados obitidos através da  sequência do lançamento da bolinha por intermédio da catapulta, usando diferentes níveis de ângulos (O-, A+, B+, A-).
+
+> Exemplo: análise da variabilidade em experimentos físicos utilizando uma catapulta.
+
+
+## 🎯 Objetivos
+
+Analisaremos como essas variáveis podem ou não influenciar a distância percorrida pela bolinha.
+
+### Objetivos específicos
+
+Iremos coletar os dados através da medição da distâcia que a bola percoreu,organizaremos esses dados para a tabulação, organizaremos e analisaremos esses dados na tabulação usando alinguagem R, e após tudo isso discutiremos suas implicações (intepretaremos os resultados obtidos).
+
+---
+
+## Níveis das Variáveis (de baixo para cima)
+
+- O- -> Nível 2
+- A+ -> Nível 3
+- B+ -> 90°
+- A- -> Nível 4
+
+## O que cada variável influencia no experimento
+
+### O Nível O-
+
+Ponto de referência, é o apoio superior da catapulta, pode influenciar o alinhamento ou ponto de apoio; essa variável afeta a geometria do movimento, assim ela influencia de forma mais indireta, atuando junto de A e de B. Pode vir a afetar a reprodução dos lançamentos;
+
+### O Nível A+
+
+Essa posição da tensão do elástico, representa a deformação do elástico, assim aumenta a energia potencial elástica e gera uma maior velocidade inicial da bolinha, dependendo dela podemos gerar um maior alcance da bolinha, mas também pode fazer com que os lançamentos sejam mais sensíveis;
+
+### O Nível B+
+
+Essa posição está relacionada ao ajuste do ângulo da catapulta, é um batente regulador do ângulo final, assim ele define o ângulo de saída da bolinha e acaba influenciando o tempo do voo. Quando são ângulos próximos de 45° ao alcance da bolinha maior será o alcance dela. Assim sendo com ângulos muito baixos teremos uma "bola rasteira" e com ângulos muito altos essa bola subirá mais e consequentemente percorerrá uma distância horizontal menor;
+
+### O Nível A-
+
+Essa variável também vai influenciar na tensão do elástico mas em menor intensidade, ela influencia com uma menor energia armazenada e uma menor velocidade de lançamento. Em relação a distância percorrida pela bolinha essa variável impacta com um menor alcance médio e geralmente um maior controle e uma maior variabilidade da distância percorrida;
+
+---
+
+## 📚  Fundamentação Teórica
+
+Apresentaremos os conceitos principais:
+
+- Média;
+
+- Variância;
+ 
+- Desvio padrão;
+
+- Amostragem;
+
+
+$$
+\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i
+$$
+
+---
+
+## ⚙️ Metodologia
+
+::: {.callout-note}
+:::
+
+- Materiais utilizados: Uma catapulta (já com as variáveis identifacadas e com o elástico) cedida pelo professor que ministra as aulas do curso assim como duas presilhas, uma trena, uma bolinha, giz branco de lousa, uma carteira da faculdade e uma régua;
+
+- Procedimento:  Primeiro o professor separou uma  carteira, onde a catapulta foi "presa" com a ajuda das duas presilhas, uma foi colocada em frente a catapulta e a outra foi colocada do lado da catapulta (rente ao lado da mesa em que a catapulta está em cima), logo depois colocamos a mesa de forma reta em uma junta do piso da sala e organizamos os alunos para, anotar os lançamentos, marcar onde a bolinha iria cair, medir com a trena a distância percorrida pela bolinha e fazer o lançamento da bolinha com ajuda da catapulta;
+
+- Número de repetições: Fizemos esse processo por 22 lançamentos seguidos, até que o elástico estourou, e por isso finalizamos antes dos esperados 40 lançamentos.
+
+---
+
+## 🔍 Resultados e Discussão
+
+Apresentando e interpretando os resultados obtidos dos dados coletados no experimento.
+
+
+```{r,eval = TRUE}
+library(leem)
+
+dados <- c(326, 294.8, 296.7, 299, 295.8, 298.5, 300.6, 285.1, 287.1, 292.3, 290.8, 287.9, 282.9, 285.3, 281.5, 278.4, 276.4, 281.7, 277.1, 285.3, 277.3, 281.8)
+
+dados_ordenados <- sort(dados)
+
+sort(dados)
+
+```
+
+
+- Descreva os principais resultados numéricos (média, variabilidade, etc.).
+
+# Média: 288.41 cm
+# Mediana: 285.70 cm
+# Moda: 285.3 cm (mais frequente)
+# Variância: 65.42
+# Desvio padrão: 8.09 cm
+
+- Comente o comportamento dos dados observados nos gráficos.
+- Indique se há presença de valores discrepantes (outliers).
+- Avalie se os dados apresentam simetria ou tendência.
+
+Em seguida, discuta os resultados à luz dos conceitos teóricos:
+
+A média de 288.41 cm reflete bom controle, mas dispersão (DP=8.09 cm) indica variações por força inconsistente ou medição. Moda próxima à mediana sugere simetria. Ângulos ~45° maximizaram distância, enquanto 90° minimizou (queda vertical). Erros: vento, fricção ignorada.
+
+- Os resultados estão de acordo com o esperado?
+- Há grande variabilidade? O que isso significa no contexto do experimento?
+- Quais fatores podem ter influenciado os resultados?
+- Existem possíveis fontes de erro experimental?
+
+Procure não apenas descrever, mas **interpretar os dados**.
+
+### 💬 Exemplo de como citar uma referência bibliográfica
+
+Depois de inserido as informaçõe no arquivo **referencias.bib**, use:
+
+- Segundo @Rbasico2022
+- Tudo é um objeto em R [@Rbasico2022]
+
+### 📊  Análise de Dados
+
+```{r}
+distancia <- c(10.2, 9.8, 10.5, 10.1, 9.9, 10.3)
+distancia
+```
+
+## 🧠 Considerações finais
+
+Apresente uma síntese dos principais pontos observados no experimento.
+
+- Retome o objetivo da prática e indique se ele foi alcançado.
+- Destaque os principais aprendizados obtidos.
+- Comente brevemente sobre a qualidade dos dados coletados.
+- Sugira possíveis melhorias no procedimento experimental.
+
+Evite repetir apenas os resultados; foque nas **conclusões e reflexões** sobre a prática realizada.
+
+## Aprenda Quarto
+
+Acesse [Quarto](https://quarto.org/).
+
+## 📖 Referências
