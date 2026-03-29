@@ -39,12 +39,9 @@ Analisaremos como essas variáveis podem ou não influenciar a distância percor
 
 ### Objetivos específicos
 
-Iremos coletar os dados através da medição da distâcia que a bola percoreu,organizaremos esses dados para a tabulação, organizaremos e analisaremos esses dados na tabulação usando alinguagem R, e após tudo isso discutiremos suas implicações.
+Iremos coletar os dados através da medição da distâcia que a bola percoreu,organizaremos esses dados para a tabulação, organizaremos e analisaremos esses dados na tabulação usando alinguagem R, e após tudo isso discutiremos suas implicações (intepretaremos os resultados obtidos).
 
 ---
-
-## Níveis das Variáveis (de baixo para cima)
-
 - O- -> Nível 2
 - A+ -> Nível 3
 - B+ -> 90°
@@ -72,21 +69,21 @@ Essa variável também vai influenciar na tensão do elástico mas em menor inte
 
 ## 📚  Fundamentação Teórica
 
-Apresentaremos os conceitos principais:
-
+ Apresentaremos os conceitos principais:
+  
 - Média;
 
 - Variância;
- 
+
 - Desvio padrão;
 
 - Amostragem;
 
 
 $$
-\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i
+  \bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i
 $$
-
+  
 ---
 
 ## ⚙️ Metodologia
@@ -105,17 +102,19 @@ print(dados_organizados)
 
 ```
 
+
 - Materiais utilizados: Uma catapulta (já com as variáveis identifacadas e com o elástico) cedida pelo professor que ministra as aulas do curso assim como duas presilhas, uma trena, uma bolinha, giz branco de lousa, uma carteira da faculdade e uma régua;
 
 - Procedimento:  Primeiro o professor separou uma  carteira, onde a catapulta foi "presa" com a ajuda das duas presilhas, uma foi colocada em frente a catapulta e a outra foi colocada do lado da catapulta (rente ao lado da mesa em que a catapulta está em cima), logo depois colocamos a mesa de forma reta em uma junta do piso da sala e organizamos os alunos para, anotar os lançamentos, marcar onde a bolinha iria cair, medir com a trena a distância percorrida pela bolinha e fazer o lançamento da bolinha com ajuda da catapulta;
 
 - Número de repetições: Fizemos esse processo por 22 lançamentos seguidos, até que o elástico estourou, e por isso finalizamos antes dos esperados 40 lançamentos.
-
+  
 ---
 
 ## 🔍 Resultados e Discussão
 
-Apresentando e interpretando os resultados obtidos dos dados coletados no experimento.
+
+  Apresentando e interpretando os resultados obtidos dos dados coletados no experimento.
 
 
 ```{r,eval = TRUE}
@@ -132,15 +131,23 @@ sort(dados)
 
 - Descreva os principais resultados numéricos (média, variabilidade, etc.).
 
-# Média: 288.41 cm
-# Mediana: 285.70 cm
-# Moda: 285.3 cm (mais frequente)
-# Variância: 65.42
-# Desvio padrão: 8.09 cm
+- Média: 289.36 cm
+- Mediana: 288.11 cm
+- Moda: 286.73 cm
+- Variância: 125.8
+- Desvio padrão: 11.22 cm
 
 - Comente o comportamento dos dados observados nos gráficos.
 - Indique se há presença de valores discrepantes (outliers).
 - Avalie se os dados apresentam simetria ou tendência.
+
+Em seguida, discuta os resultados à luz dos conceitos teóricos:
+  
+  - A média de 289.2 cm reflete bom controle, mas o desvio padrão (DP=11,22 cm) indica variações por força inconsistente ou medição. Ângulos ~45° maximizaram distância, enquanto 90° minimizou (queda vertical). Erros: vento, fricção ignorada.
+
+- Tem a presença de valores discrepantes, já que a maior parte dos valores estão entre 276 e 300, enquanto temos um valor de 326, o que vendo os valores é consideravelmente afastado, ele que fez com que a média > mediana, mas isso pode ter sido provocado por n motivos, como a força elástica, a mudança na posição da mesa, o tempo que o elástico da catapulta ficou pressionado para baixo e etc. Mas no geral, com exceção desse valor, os dados se mostraram relativamente próximos.
+
+- Comparando a média, a mediana e a moda vemos que a média > mediana > moda, isso mostra que os dados apresentam uma assimetria positiva (no caso, a direita), assim sendo, existe uma tendência dos dados se concentrarem em valores menores (mais próximos do limite inferior da distribuição).
 
 Em seguida, discuta os resultados à luz dos conceitos teóricos:
 
@@ -150,6 +157,13 @@ A média de 288.41 cm reflete bom controle, mas dispersão (DP=8.09 cm) indica v
 - Há grande variabilidade? O que isso significa no contexto do experimento?
 - Quais fatores podem ter influenciado os resultados?
 - Existem possíveis fontes de erro experimental?
+
+  - Sim, acredito que os resultados estão de acordo com o esperado, visto que a maioria seguiu um padrão, com apenas um muito diferente.
+
+- Pesquisando vi que o desvio de 11,22 cm é bom, mostrando um lançamento consistente, mas não totalmente preciso (o que acredito ser normal e inclusive esperdo em experimentos manuais).
+
+- Como coloquei a cima, os fatores que podem ter influenciado os resultados são: vento, fricção, ângulo, força elástica, e acredito que possíveis fontes de erro também estariam relacionadas a esses fatores e claro a ser um experimento feito em sala de aula, assim com várias coisas para se distrair, o que pode ter distraido quem estava com a trena (a respeito dos milímetos de distância) e quem estava marcando onde a bolinha caiu (já que o piso é todo marcado, e isso pode ter ajudado a uma possível confusão a respeito de onde a bolinha caiu). Mas no geral, acredito que o experimento tenha sido bem executado por todos os presentes.
+
 
 Procure não apenas descrever, mas **interpretar os dados**.
 
@@ -162,10 +176,48 @@ Depois de inserido as informaçõe no arquivo **referencias.bib**, use:
 
 ### 📊  Análise de Dados
 
-```{r}
-distancia <- c(10.2, 9.8, 10.5, 10.1, 9.9, 10.3)
-distancia
+```{r,eval = TRUE}
+library(leem)
+
+dados <- c(326, 294.8, 296.7, 299, 295.8, 298.5, 300.6, 285.1, 287.1, 292.3, 290.8, 287.9, 282.9, 285.3, 281.5, 278.4, 276.4, 281.7, 277.1, 285.3, 277.3, 281.8)
+
+meus_dados <- new_leem(dados, variable = "continuous")
+
+media_dados   <- mean(meus_dados)
+mediana_dados <- median(meus_dados)
+moda_dados    <- mfreq(meus_dados)
+
+meus_dados <- new_leem(dados, variable = "continuous")
+
+print(paste("A Média pela tabela é:", round(media_dados, 2)))
+print(paste("A Mediana pela tabela é:", round(mediana_dados, 2)))
+print(paste("A Moda pela tabela é:", moda_dados))
+
+tab_dados <- new_leem(dados, variable = "continuous")
+
+media_exata   <- mean(dados)
+mediana_exata <- median(dados)
+tabela_moda <- table(dados)
+moda_exata  <- names(tabela_moda[tabela_moda == max(tabela_moda)])
+
+print(paste("A Média exata é:", round(media_exata, 2)))
+print(paste("A Mediana exata é:", round(mediana_exata, 2)))
+print(paste("A Moda exata é:", moda_exata))
+
+variancia_dados <- var(dados)
+desvio_padrao_dados <- sd(dados)
+
+print(paste("A Variância exata é:", round(variancia_dados, 2)))
+print(paste("O Desvio Padrão exato é:", round(desvio_padrao_dados, 2)))
+
+variancia_tab <- variance(meus_dados)
+desvio_padrao_tab <- leem::mstde(meus_dados)
+
+print(paste("A Variância pela tabela é:", round(variancia_tab, 2)))
+print(paste("O Desvio Padrão pela tabela é:", round(desvio_padrao_tab, 2)))
+
 ```
+
 
 ## 🧠 Considerações finais
 
