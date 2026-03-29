@@ -143,7 +143,7 @@ sort(dados)
 
 Em seguida, discuta os resultados à luz dos conceitos teóricos:
   
-  - A média de 289.2 cm reflete bom controle, mas o desvio padrão (DP=11,22 cm) indica variações por força inconsistente ou medição. Ângulos ~45° maximizaram distância, enquanto 90° minimizou (queda vertical). Erros: vento, fricção ignorada.
+- A média de 289.2 cm reflete bom controle, mas o desvio padrão (DP=11,22 cm) indica variações por força inconsistente ou medição. Ângulos ~45° maximizaram distância, enquanto 90° minimizou (queda vertical). Erros: vento, fricção ignorada.
 
 - Tem a presença de valores discrepantes, já que a maior parte dos valores estão entre 276 e 300, enquanto temos um valor de 326, o que vendo os valores é consideravelmente afastado, ele que fez com que a média > mediana, mas isso pode ter sido provocado por n motivos, como a força elástica, a mudança na posição da mesa, o tempo que o elástico da catapulta ficou pressionado para baixo e etc. Mas no geral, com exceção desse valor, os dados se mostraram relativamente próximos.
 
